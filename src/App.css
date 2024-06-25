@@ -1,0 +1,262 @@
+.app::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 55vh;
+  background-color: var(--Almost-white);
+  right: 0;
+  border-radius: 0 0 0 60px;
+  z-index: -1;
+}
+
+/* Header */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 220px;
+}
+
+.menu {
+  display: flex;
+  gap: 60px;
+  letter-spacing: 1px;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.menu a {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--Gray);
+  position: relative;
+}
+
+.menu a::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #a0a1ac3d;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -35px;
+}
+
+.menu ul li:hover,
+.menu a:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: underline;
+}
+
+/* Main Section */
+main {
+  display: flex;
+  align-items: center;
+  padding: 60px 0 0 220px;
+  overflow: hidden;
+}
+
+.main_text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_image {
+  margin-right: -260px;
+}
+
+.main_text_subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.main_text_subtitle span {
+  background-color: #000;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.main_text_subtitle p {
+  color: var(--Gray);
+  letter-spacing: 2px;
+}
+
+.main_text h1 {
+  font-size: 56px;
+  text-transform: uppercase;
+  width: min-content(100px, 10%);
+  padding-bottom: 10px;
+}
+
+.main_text_description {
+  padding-bottom: 40px;
+  color: var(--Dark-Gray);
+  width: 200px;
+}
+
+.main_text_actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main_text_actions button {
+  padding: 12px 14px;
+  min-width: 20%;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: var(--Red);
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.main_text_actions button:hover {
+  cursor: pointer;
+  background-color: #ff5c5cd7;
+}
+
+.main_text_actions span {
+  text-transform: uppercase;
+  color: var(--Gray);
+  letter-spacing: 2px;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 1440px) {
+  header nav {
+    padding: 40px 120px;
+  }
+  main {
+    padding: 40px 0 0 120px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .app::before {
+    min-height: 100vh;
+  }
+  header nav {
+    padding: 40px 90px;
+  }
+  main {
+    flex-direction: column-reverse;
+    padding: 40px 90px;
+    gap: 60px;
+  }
+  .main_image {
+    width: 150%;
+  }
+  .main_text {
+    width: 100%;
+  }
+  .main_text_subtitle {
+    font-size: 16px;
+  }
+  .main_text_description {
+    font-size: 18px;
+    width: 80%;
+  }
+  .main_text_actions {
+    width: 100%;
+    gap: 20px;
+  }
+  .main_text_actions button {
+    width: 50%;
+  }
+  .main_text_actions span {
+    width: 50%;
+    text-align: center;
+  }
+  .main_text h1 {
+    padding-top: 10px;
+    font-size: 48px;
+    width: max-content(300px, 50%);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app::before {
+    min-height: 60vh;
+  }
+  header nav {
+    padding: 40px;
+  }
+  .main_text h1 {
+    font-size: 42px;
+  }
+  main {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu_icon {
+    position: relative;
+  }
+
+  .menu_icon i {
+    font-size: 22px;
+  }
+
+  .menu_icon:hover {
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .menu {
+    position: absolute;
+    flex-direction: column;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    gap: 30px;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.125);
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #a0a1ac3d;
+  }
+
+  .menu a::before {
+    display: none;
+  }
+
+  main {
+    padding-top: 0;
+  }
+  .main_image {
+    width: 164%;
+    margin-right: -200px;
+  }
+}
